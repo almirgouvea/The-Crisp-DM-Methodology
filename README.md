@@ -45,3 +45,9 @@ This phase aims to evaluate the model and review the model construction steps to
 ===============================
 
 This phase aims to organize and present the knowledge acquired with the project so that the client can use the created models in the organization’s decision-making processes.
+
+Project
+=================
+All the steps are explained in detail on the link below.
+
+* **Project:** [**The Crisp-DM Methodology**](https://almirgouvea.github.io/The-Crisp-DM-Methodology)
