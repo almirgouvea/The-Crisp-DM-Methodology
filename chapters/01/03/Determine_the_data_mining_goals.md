@@ -1,5 +1,4 @@
 Determine the data mining goals
-
 ===============================
 
 The goals of data mining are to transform the business problem into a technical problem to apply the concepts of the crisp-dm methodology.

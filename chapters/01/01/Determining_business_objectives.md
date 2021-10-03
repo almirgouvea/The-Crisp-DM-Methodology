@@ -1,5 +1,4 @@
 Determining business objectives
-
 ===============================
 
 Understanding a client's true goal is critical:

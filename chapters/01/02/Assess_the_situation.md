@@ -1,5 +1,4 @@
 Assess the situation
-
 ====================
 
 This task involves the resources, requirements, constraints, assumptions, risks, contingencies, glossary of terminology, and the cost-benefit analysis.

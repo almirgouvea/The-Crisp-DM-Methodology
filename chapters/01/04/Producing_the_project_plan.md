@@ -1,5 +1,4 @@
 Producing the project plan
-
 ===============================
 
 This step describes the intended plan for achieving the data mining goals including:
