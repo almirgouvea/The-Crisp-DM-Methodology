@@ -1,0 +1,871 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The CRISP-DM Model &#8212; The Crisp-DM Model</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/crisp-dm.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Crisp-DM Model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The CRISP-DM Model
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/The_CRISP_DM_Model.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/almirgouvea/The-Crisp-DM-Model"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/almirgouvea/The-Crisp-DM-Model/master?urlpath=tree/The_CRISP_DM_Model.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-one-business-understanding">
+   Phase one: Business Understanding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determining-business-objectives">
+     Determining business objectives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assess-the-situation">
+     Assess the situation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-the-data-mining-goals">
+     Determine the data mining goals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#producing-the-project-plan">
+     Producing the project plan
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-two-data-understanding">
+   Phase Two: Data Understanding
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collect-the-initial-data">
+     Collect the Initial data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#describe-the-data">
+     Describe the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explore-the-data">
+     Explore the Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verify-data-quality">
+     Verify Data Quality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-three-data-preparation">
+   Phase Three: Data Preparation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-data">
+     Select Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-data">
+     Clean Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construct-data">
+     Construct Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrate-data">
+     Integrate Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-data">
+     Format Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-four-modeling">
+   Phase Four: Modeling
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#select-the-modeling-technique">
+     Select the Modeling Technique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-test-design">
+     Generate Test Design
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-model">
+     Build the Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assess-the-model">
+     Assess the Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-five-evaluation">
+   Phase Five: Evaluation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation-of-results">
+     Evaluation of results
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#process-review">
+     Process review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determination-of-next-steps">
+     Determination of next steps
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phase-six-deployment">
+   Phase Six: Deployment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plan-deployment">
+     Plan deployment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plan-monitoring-and-maintenance">
+     Plan monitoring and maintenance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#production-of-the-final-report">
+     Production of the final report
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#review-of-the-project">
+     Review of the project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <center>
+<div class="section" id="the-crisp-dm-model">
+<h1>The CRISP-DM Model<a class="headerlink" href="#the-crisp-dm-model" title="Permalink to this headline">¶</a></h1>
+</center><div class="section" id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>The CRoss-Industry Standard Process for Data Mining (CRISP-DM), created in the end of 1996 by leaders of Daimler-Benz, is a non-proprietary, documented and freely available data mining methodology and process model.</p>
+<p>This model encourages best practices and offers organizations the structure needed to realize better, faster results from data mining due the complete blueprint for conducting a data mining project.</p>
+<p>After many changes on CRISP-DM, a significant progress occurs on 2000 due a development of a standardized data processing model accepted by industry players.</p>
+<p>CRISP-DM provides a generic process model capable of being modified for the particular needs of any industry.</p>
+<p>The data mining methodology and techniques combined with assistance from more experienced practitioners can be an essential tool to understand the concepts and steps involved in the entire data mining process.</p>
+<p>CRISP-DM organizes the data mining process into six phases: business understanding, data understanding, data preparation, modeling, evaluation, and deployment.</p>
+<p>The arrows indicates the dependencies between the phases and the outer circle symbolizes the cyclical nature of data mining itself.</p>
+<p>After complete the cyciclal the lessons learned can be analysed and show to business team. After it can be more focus on business questions and start again focusing on get other analysis.</p>
+<div>
+<img src="attachment:Crispdm.png" width = "700"/>
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                    Figure 01: Phases of the CRISP-DM
+</pre></div>
+</div>
+</div>
+<div class="section" id="phase-one-business-understanding">
+<h2>Phase one: Business Understanding<a class="headerlink" href="#phase-one-business-understanding" title="Permalink to this headline">¶</a></h2>
+<p>This phase aims to understand the project objectives and requirements from a business perspective, converting the knowledge into a data mining problem definition and then developing a preliminary plan to achieve the objectives.</p>
+<p>Understanding what the customer really wants to accomplish from a business perspective is very important to find a solution to the problem.</p>
+<p>There are several keys steps to develop the business understanding process:</p>
+<ul class="simple">
+<li><p>determining business objectives</p></li>
+<li><p>assessing the situation</p></li>
+<li><p>determine the data mining goals</p></li>
+<li><p>producing the project plan</p></li>
+</ul>
+<div class="section" id="determining-business-objectives">
+<h3>Determining business objectives<a class="headerlink" href="#determining-business-objectives" title="Permalink to this headline">¶</a></h3>
+<p>Understanding a client’s true goal is critical:</p>
+<ul class="simple">
+<li><p>to uncover the primary business objective</p></li>
+<li><p>to uncover the related questions the business would like to address</p></li>
+<li><p>to uncover important factors involved in the planned project</p></li>
+<li><p>to ensure the projects answers correctly the expected business questions</p></li>
+<li><p>to measure the success to make sure that each success criterion relates to at least one of the specified business objectives</p></li>
+</ul>
+</div>
+<div class="section" id="assess-the-situation">
+<h3>Assess the situation<a class="headerlink" href="#assess-the-situation" title="Permalink to this headline">¶</a></h3>
+<p>This task involves the resources, requirements, constraints, assumptions, risks, contingencies, glossary of terminology, and the cost-benefit analysis.</p>
+<p>This step is very important to outline the resources available to accomplish the data mining project to:</p>
+<ul class="simple">
+<li><p>list personnel resources like business experts, data experts, technical support, and data mining experts</p></li>
+<li><p>discover what data is available to meet the primary business goal</p></li>
+<li><p>list of computing resources focusing on hardware platforms</p></li>
+<li><p>list software resources like data mining tools, other relevant software</p></li>
+</ul>
+<p>It is important to describe the requirements, assumptions, and constraints to:</p>
+<ul class="simple">
+<li><p>schedule of completion, comprehensibility, and quality of results, and security, as well as legal issues</p></li>
+<li><p>list the assumptions made in the project and the unverifiable assumptions about the business questions</p></li>
+<li><p>list the project risks when considering the assumptions</p></li>
+<li><p>list of constraints on the project considering resources availability and technological constraints</p></li>
+</ul>
+<p>It is important to insvestigate the risks and contingencies to:</p>
+<ul class="simple">
+<li><p>list the risks or events that might delay the project or cause it to fail</p></li>
+<li><p>list contingency plans to determine what actions should be taken if risks or events occur</p></li>
+<li><p>list the potential solution of the risks</p></li>
+</ul>
+<p>It is important to compile a glossary of terminology relevant to the project including two components:</p>
+<ul class="simple">
+<li><p>a glossary of relevant business terminology to help other teams understand the business issue related to the project</p></li>
+<li><p>a glossary of data mining terminology illustrated with examples</p></li>
+</ul>
+<p>It is important to verify the costs and benefits due project’s implementation including:</p>
+<ul class="simple">
+<li><p>construct a cost-benefit analysis for the project comparing the project costs with the potential benefits</p></li>
+<li><p>compare the cost-effectiveness as specifically as possible</p></li>
+</ul>
+</div>
+<div class="section" id="determine-the-data-mining-goals">
+<h3>Determine the data mining goals<a class="headerlink" href="#determine-the-data-mining-goals" title="Permalink to this headline">¶</a></h3>
+<p>The goals of data mining are to transform the business problem into a technical problem to apply the concepts of the crisp-dm methodology.</p>
+<p>To achieve the business objective it is important to describe:</p>
+<ul class="simple">
+<li><p>the intended outputs of the project</p></li>
+<li><p>the criteria for a successful outcome project</p></li>
+</ul>
+<p>It is important to analyze whether:</p>
+<ul class="simple">
+<li><p>the business success criteria were defined subjectively and by whom</p></li>
+<li><p>defines the objective effectively, otherwise, it will be necessary to re-examine the problem definition</p></li>
+</ul>
+</div>
+<div class="section" id="producing-the-project-plan">
+<h3>Producing the project plan<a class="headerlink" href="#producing-the-project-plan" title="Permalink to this headline">¶</a></h3>
+<p>This step describes the intended plan for achieving the data mining goals including:</p>
+<ul class="simple">
+<li><p>outline the specific steps to be performed during the project</p></li>
+<li><p>proposed timeline on each stage of the project</p></li>
+<li><p>duration, resources required, inputs, outputs, and dependencies of the project stages</p></li>
+<li><p>an analysis of dependencies between schedule and risks</p></li>
+<li><p>an assessment of potential risks, considering the actions and recommendations to be taken</p></li>
+<li><p>an initial assessment of the tools and techniques needed to support the project</p></li>
+</ul>
+<p>The proposed timeline depends on each project phase, so it is important to decide which evaluation strategy will be used in the stages.</p>
+<p>The industry timeline standards are:</p>
+<ul class="simple">
+<li><p>Data Preparation: 50 to 70 percent</p></li>
+<li><p>Data Understanding: 20 to 30 percent</p></li>
+<li><p>Modeling, Evaluation, and Business Understanding: 10 to 20 percent</p></li>
+<li><p>Deployment Planning: 5 to 10 percent</p></li>
+</ul>
+<div>
+<img src = "attachment:Industry_timeline_standards.svg" width = '800'/>
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                    Figure 02: Generally accepted industry timeline standards
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="phase-two-data-understanding">
+<h2>Phase Two: Data Understanding<a class="headerlink" href="#phase-two-data-understanding" title="Permalink to this headline">¶</a></h2>
+<p>This phase aims to increase familiarity with the data, to identify data quality problems, to discover initial insights into the data and detect interesting subsets to form hypotesis about hidden information.</p>
+<p>There are several keys steps to develop the data understanding process:</p>
+<ul class="simple">
+<li><p>collection of initial data</p></li>
+<li><p>description of the data</p></li>
+<li><p>exploration the data</p></li>
+<li><p>verification data quality</p></li>
+</ul>
+<div class="section" id="collect-the-initial-data">
+<h3>Collect the Initial data<a class="headerlink" href="#collect-the-initial-data" title="Permalink to this headline">¶</a></h3>
+<p>This step consists on acquires the necessary data from several sources.</p>
+<p>Understanding the process to collect data is critical:</p>
+<ul class="simple">
+<li><p>to determine how to loading and integrating the data in the process</p></li>
+<li><p>the datasets acquired, the location where they are stored, and the methods used to acquire them</p></li>
+<li><p>to analyze the potential delay to collect data from each source due to long lag time</p></li>
+<li><p>to report problems encountered and propose solutions to avoid it</p></li>
+</ul>
+</div>
+<div class="section" id="describe-the-data">
+<h3>Describe the data<a class="headerlink" href="#describe-the-data" title="Permalink to this headline">¶</a></h3>
+<p>This step is very important to understand the data by checking the properties of the acquired data, such as:</p>
+<ul class="simple">
+<li><p>the format of the data</p></li>
+<li><p>the quantity of the data, for example, the number of records and fields in each table</p></li>
+<li><p>the identities of the fields</p></li>
+<li><p>the features of the data</p></li>
+</ul>
+</div>
+<div class="section" id="explore-the-data">
+<h3>Explore the Data<a class="headerlink" href="#explore-the-data" title="Permalink to this headline">¶</a></h3>
+<p>Exploring the data help tackles the data mining questions considering assumptions and potential impact on the remainder of the project.</p>
+<p>This task also refines the data description by performing the transformation and other data preparation steps necessary for further analysis.</p>
+<p>This process can be done using:</p>
+<ul class="simple">
+<li><p>querying, visualization and reporting techniques</p></li>
+<li><p>an analyzis of key attributes relationships between pairs or small numbers of attributes</p></li>
+<li><p>statistical analyzes including graphs and plots</p></li>
+<li><p>analyzing the initial hypothesis and its impact on the rest of the project</p></li>
+</ul>
+</div>
+<div class="section" id="verify-data-quality">
+<h3>Verify Data Quality<a class="headerlink" href="#verify-data-quality" title="Permalink to this headline">¶</a></h3>
+<p>Data quality is essential to ensure project success.</p>
+<p>After analyzing the data to verify data quality, it is important to answer some questions such as:</p>
+<ul class="simple">
+<li><p>Is there missing attributes and blank fields?</p></li>
+<li><p>Does it cover all the cases required?</p></li>
+<li><p>Are the collected values possible to occur or are they outliers?</p></li>
+<li><p>How often do errors and missing values in the data occur?</p></li>
+<li><p>Are there attributes with different values that have similar meanings?</p></li>
+<li><p>Does the acquired data satisfy the relevant requirements?</p></li>
+<li><p>Does it necessary to a collect different sets of data?</p></li>
+</ul>
+<p>It is important to provide a data quality report containing:</p>
+<ul class="simple">
+<li><p>list the results of the data quality verification</p></li>
+<li><p>consider both data and business knowledge to solve data quality issues</p></li>
+<li><p>list possible solutions when occurs quality problem</p></li>
+</ul>
+<div>
+<img src="attachment:sources_data.png" width="700">
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                            Figure 03: Different sources of the data                          
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="phase-three-data-preparation">
+<h2>Phase Three: Data Preparation<a class="headerlink" href="#phase-three-data-preparation" title="Permalink to this headline">¶</a></h2>
+<p>This phase aims to build the final dataset to be used in the modeling tools.</p>
+<p>There are several keys steps to develop the data preparation process:</p>
+<ul class="simple">
+<li><p>data selection</p></li>
+<li><p>data cleaning</p></li>
+<li><p>data construction</p></li>
+<li><p>data integration</p></li>
+<li><p>data formatting</p></li>
+</ul>
+<div class="section" id="select-data">
+<h3>Select Data<a class="headerlink" href="#select-data" title="Permalink to this headline">¶</a></h3>
+<p>Several criteria must be considered when deciding which of the data will be used in the analysis:</p>
+<ul class="simple">
+<li><p>its relevance to achieving data mining objectives</p></li>
+<li><p>the quality and technical constraints such as limits on data volume or data types</p></li>
+<li><p>choose and explain which certain data must be included or excluded</p></li>
+<li><p>which attributes (columns) are more important than others</p></li>
+<li><p>which records (rows) are more important than others</p></li>
+</ul>
+</div>
+<div class="section" id="clean-data">
+<h3>Clean Data<a class="headerlink" href="#clean-data" title="Permalink to this headline">¶</a></h3>
+<p>Data cleaning is an important process to ensure quality, representativeness, and unbiased.</p>
+<p>The data cleaning process considers the following steps:</p>
+<ul class="simple">
+<li><p>selection of clean subsets of the data</p></li>
+<li><p>the insertion of suitable defaults</p></li>
+<li><p>estimation of missing data by modeling</p></li>
+</ul>
+<p>It is important to provide a clean data report containing:</p>
+<ul class="simple">
+<li><p>decisions and actions that were taken to resolve data quality issues</p></li>
+<li><p>the data transformations that took place in this step</p></li>
+<li><p>possible impact on the result of the project analysis</p></li>
+</ul>
+</div>
+<div class="section" id="construct-data">
+<h3>Construct Data<a class="headerlink" href="#construct-data" title="Permalink to this headline">¶</a></h3>
+<p>Construct data is the process of developing new records or producing derived attributes.</p>
+<ul class="simple">
+<li><p>New records focus on creating a new attribute column from a data collect.</p></li>
+<li><p>Derived attributes focus on constructing new of it from one or more existing attributes in the same record.</p></li>
+</ul>
+<p>It is important to consider adding derived attributes only to facilitate the modeling process or the modeling algorithm, not to reduce the number of input attributes.</p>
+</div>
+<div class="section" id="integrate-data">
+<h3>Integrate Data<a class="headerlink" href="#integrate-data" title="Permalink to this headline">¶</a></h3>
+<p>Integrate data focus on combining information from multiple tables or records to create new records or value.</p>
+<p>The integrate data process can be done by different ways such as:</p>
+<ul class="simple">
+<li><p>two or more tables with different information about the same object can be merged together to create a new table with fields from the source tables</p></li>
+<li><p>perform the aggregation operation in which new values are created from summarizing information from various records and/or tables.</p></li>
+</ul>
+</div>
+<div class="section" id="format-data">
+<h3>Format Data<a class="headerlink" href="#format-data" title="Permalink to this headline">¶</a></h3>
+<p>The data formatting process primarily focuses on syntactic modifications made to the data without changing its meaning.</p>
+<p>Sometimes is necessary to change the design or format of the data, or change the order of the attributes to make it suitable for a specific modeling tool, or answer the data mining question.</p>
+<div>
+<img src = "attachment:data_preparation.png" width = '700'/>
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                  Figure 04: Need to care in the process of the data preparation                     
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="phase-four-modeling">
+<h2>Phase Four: Modeling<a class="headerlink" href="#phase-four-modeling" title="Permalink to this headline">¶</a></h2>
+<p>This phase aims to select and apply modeling techniques to calibrate their parameters to optimal values.</p>
+<p>There are several keys steps to develop the modeling process:</p>
+<ul class="simple">
+<li><p>selection of the modeling technique</p></li>
+<li><p>generation of test design</p></li>
+<li><p>creation of models</p></li>
+<li><p>assessment of models</p></li>
+</ul>
+<div class="section" id="select-the-modeling-technique">
+<h3>Select the Modeling Technique<a class="headerlink" href="#select-the-modeling-technique" title="Permalink to this headline">¶</a></h3>
+<p>The selection of the modeling technique focuses on choosing one or more modeling techniques and the assumptions associated to the modeling technique.</p>
+<p>When perform the select the modeling technique process it is important to:</p>
+<ul class="simple">
+<li><p>document the actual modeling technique that is to be used</p></li>
+<li><p>If multiple techniques are applied, perform this task separately for each one</p></li>
+<li><p>record any assumption made about the data</p></li>
+</ul>
+</div>
+<div class="section" id="generate-test-design">
+<h3>Generate Test Design<a class="headerlink" href="#generate-test-design" title="Permalink to this headline">¶</a></h3>
+<p>To determine the strength, quality, and validity of the model, before building the model, is necessary running empirical testing to measure how well the model can predict history before using it to predict the future.</p>
+<p>There are several keys steps to develop the test design:</p>
+<ul class="simple">
+<li><p>describe the process for training, testing, and evaluating the model</p></li>
+<li><p>separate dataset into train and test</p></li>
+<li><p>build the model in the train set</p></li>
+<li><p>estimate the quality in the test set</p></li>
+</ul>
+</div>
+<div class="section" id="build-the-model">
+<h3>Build the Model<a class="headerlink" href="#build-the-model" title="Permalink to this headline">¶</a></h3>
+<p>This task focus on run the modeling tool on the prepared data set to create one or more models.</p>
+<p>There are several keys steps to develop the build model process:</p>
+<ul class="simple">
+<li><p>list the model parameters and their chosen values</p></li>
+<li><p>provide a rationale for choosing parameter settings</p></li>
+<li><p>describe the resulting models</p></li>
+<li><p>describe how to interpret the models and their peculiarities</p></li>
+</ul>
+</div>
+<div class="section" id="assess-the-model">
+<h3>Assess the Model<a class="headerlink" href="#assess-the-model" title="Permalink to this headline">¶</a></h3>
+<p>Assess the model has focused on interprets the model based on domain knowledge of the subject analyzed, project success criteria, desired test design, and the data mining results in the business context.</p>
+<p>There are several keys steps to develop the model assessment process:</p>
+<ul class="simple">
+<li><p>apply a single technique more than once or generates data mining results with several different techniques</p></li>
+<li><p>compare all results according to the evaluation criteria</p></li>
+<li><p>summarize results of this task</p></li>
+<li><p>list qualities of generated models</p></li>
+<li><p>rank models quality by comparing them with each other</p></li>
+<li><p>revise parameters settings, tune them and build a new model with it</p></li>
+<li><p>iterate model building and assessment until found the best model considering the criteria</p></li>
+<li><p>document all revisions and assessments</p></li>
+</ul>
+<div>
+<img src= "attachment:modeling_techniques.png" width= '700'/>
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                              Figure 05: Modeling technique process
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="phase-five-evaluation">
+<h2>Phase Five: Evaluation<a class="headerlink" href="#phase-five-evaluation" title="Permalink to this headline">¶</a></h2>
+<p>This phase aims to evaluate the model and review the model construction steps to ensure it adequately achieves business objectives and also to verify if considered all business issues.</p>
+<p>There are several keys steps to develop the evaluation proccess:</p>
+<ul class="simple">
+<li><p>evaluation of results</p></li>
+<li><p>process review</p></li>
+<li><p>determination of next steps</p></li>
+</ul>
+<div class="section" id="evaluation-of-results">
+<h3>Evaluation of results<a class="headerlink" href="#evaluation-of-results" title="Permalink to this headline">¶</a></h3>
+<p>Evaluation of results focuses on assessing how well the model meets business objectives:</p>
+<ul class="simple">
+<li><p>checking situations where the model is not efficient</p></li>
+<li><p>testing the models on real-world applications</p></li>
+<li><p>seeking for additional challenges, information or hints</p></li>
+</ul>
+<p>At the end of this step is very important to summarize the assessment results in terms of business success criteria analyzing if the project already meets the initial business objectives.</p>
+</div>
+<div class="section" id="process-review">
+<h3>Process review<a class="headerlink" href="#process-review" title="Permalink to this headline">¶</a></h3>
+<p>Process review focuses on quality assurance through analyzing all steps to guarantee the project covers all proposed business issues.</p>
+<p>It is important to summarize this task by highlighting missed activities and those that must be repeated.</p>
+</div>
+<div class="section" id="determination-of-next-steps">
+<h3>Determination of next steps<a class="headerlink" href="#determination-of-next-steps" title="Permalink to this headline">¶</a></h3>
+<p>Determining the next steps focuses on project leader analysis to decide what should be done next:</p>
+<ul class="simple">
+<li><p>finish the project and start the deployment</p></li>
+<li><p>initiate further iterations</p></li>
+<li><p>set up new projects</p></li>
+</ul>
+<p>At the end of this step is very important:</p>
+<ul class="simple">
+<li><p>to analyze of remaining resources and budget</p></li>
+<li><p>list the potential further actions with pros and cons for each</p></li>
+<li><p>describe the decision, the justification, and how to proceed with it</p></li>
+</ul>
+<div>
+<img src= "attachment:business_team.png" width = '700' />
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                  Figure 06: Evaluation the results and determine next steps           
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="phase-six-deployment">
+<h2>Phase Six: Deployment<a class="headerlink" href="#phase-six-deployment" title="Permalink to this headline">¶</a></h2>
+<p>This phase aims to organize and present the knowledge acquired with the project so that the client can use the created models in the organization’s decision-making processes.</p>
+<p>There are several keys steps to develop the deployment proccess:</p>
+<ul class="simple">
+<li><p>plan deployment</p></li>
+<li><p>plan monitoring and maintenance</p></li>
+<li><p>the production of the final report</p></li>
+<li><p>review of the project</p></li>
+</ul>
+<div class="section" id="plan-deployment">
+<h3>Plan deployment<a class="headerlink" href="#plan-deployment" title="Permalink to this headline">¶</a></h3>
+<p>This task considers the analyzes of the results of the model assessment to plan deployment development strategies.</p>
+<p>It is important to summarize the deployment strategy, the steps required to carry it out, and how to perform it.</p>
+</div>
+<div class="section" id="plan-monitoring-and-maintenance">
+<h3>Plan monitoring and maintenance<a class="headerlink" href="#plan-monitoring-and-maintenance" title="Permalink to this headline">¶</a></h3>
+<p>To avoid misuse of data mining results in the business environment, it is vital to plan monitoring and maintenance strategies.</p>
+<p>It is important to summarize the plan monitoring and maintenance strategies, the steps required to carry it out, and how to perform it.</p>
+</div>
+<div class="section" id="production-of-the-final-report">
+<h3>Production of the final report<a class="headerlink" href="#production-of-the-final-report" title="Permalink to this headline">¶</a></h3>
+<p>The production of the final report must be written by the project leader team considering all previous deliverables, summarizing and organizing the results.</p>
+<p>Deployment plan decides which is the type of the final report:</p>
+<ul class="simple">
+<li><p>a summary of the project and its experiences</p></li>
+<li><p>a final and comprehensive presentation of the data mining results</p></li>
+<li><p>a meeting at the end of the project to present the results to the customer</p></li>
+</ul>
+</div>
+<div class="section" id="review-of-the-project">
+<h3>Review of the project<a class="headerlink" href="#review-of-the-project" title="Permalink to this headline">¶</a></h3>
+<p>Review of the project focuses on include a summary of important experiences during the project:</p>
+<ul class="simple">
+<li><p>failures</p></li>
+<li><p>success</p></li>
+<li><p>potential areas of improvement for use in future projects</p></li>
+<li><p>interviews with the significant project participants</p></li>
+<li><p>pitfalls</p></li>
+<li><p>misleading approaches</p></li>
+<li><p>hints for selecting the most suitable data mining techniques for similar situations</p></li>
+<li><p>individual project member reports written during project phases and tasks</p></li>
+</ul>
+<div>
+<img src = "attachment:deployment.png" width = "700" >
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                  Figure 07: Monitoring, maintenance, and project deployment                      
+</pre></div>
+</div>
+<p>All of the above steps are summarized in the outline of the phases, containing the generic tasks (bold) and outputs (italics).</p>
+<div>
+<img src= "attachment:generic_steps_crispdm.png" width='900'>
+</div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>            Figure 8: Generic tasks (bold) and outputs (italic) of the CRISP-DM reference model.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The Journal of Data Warehousing <a class="reference external" href="https://mineracaodedados.files.wordpress.com/2012/04/the-crisp-dm-model-the-new-blueprint-for-data-mining-shearer-colin.pdf">The New Blueprint for Data Mining</a></p></li>
+<li><p>Free images obtained from the following sites: <a class="reference external" href="https://unsplash.com/">UNSPLASH</a>, <a class="reference external" href="https://pixabay.com/">PIXABAY</a> and <a class="reference external" href="https://image.freepik.com">FREEPIK</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="notebooks.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Content with notebooks</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Almir Gouvea<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
