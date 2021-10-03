@@ -1,11 +1,9 @@
-# Table of contents
-
 format: jb-article
 root: chapters/intro
 title: Introduction
 options:
   numbered: true
-chapters:
+sections:
 - file: chapters/definition
   title: Definition
 - file: chapters/01/Business_Understanding
@@ -43,7 +41,7 @@ chapters:
     title: Data Integration  
   - file: chapters/03/05/data_formatting
     title: data Formatting   
- - file: chapters/04/modeling
+- file: chapters/04/modeling
   title: Modeling
   sections:
   - file: chapters/04/01/select_the_modeling_technique
@@ -54,7 +52,7 @@ chapters:
     title: Build The Model
   - file: chapters/04/04/assess_the_model
     title: Assess the model
- - file: chapters/05/evaluation
+- file: chapters/05/evaluation
   title: Evaluation
   sections:
   - file: chapters/05/01/evaluation_of_results
@@ -63,7 +61,7 @@ chapters:
     title: Process Review
   - file: chapters/05/03/determination_of_next_steps
     title: Determination of next steps   
- - file: chapters/06/deployment
+- file: chapters/06/deployment
   title: Deployment
   sections:
   - file: chapters/06/01/plan_deployment
