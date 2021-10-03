@@ -1,6 +1,6 @@
-# The Crisp-DM Model
+# The Crisp-DM Methodology
 
-This book was designed to describe the steps to run the Crisp-DM model.
+This book was designed to describe the steps necessary for the Crisp-DM methodology to be applied effectively.
 
 - In this book, you can find the steps in detail.
 
