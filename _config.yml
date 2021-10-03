@@ -1,7 +1,7 @@
 #######################################################################################
 # Book settings
 
-title: The Crisp-DM Model 
+title: The Crisp-DM Methodology 
 author: Almir Gouvea
 logo: crisp-dm.png
 
@@ -22,8 +22,8 @@ latex:
     targetname: book.tex
 
 repository:
-  url: https://github.com/almirgouvea/The-Crisp-DM-Model  # The URL to your book's repository
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/almirgouvea/The-Crisp-DM-Methodology  # The URL to your book's repository
+  branch: main  # Which branch of the repository should be used when creating links (optional)
 
 
 #######################################################################################
