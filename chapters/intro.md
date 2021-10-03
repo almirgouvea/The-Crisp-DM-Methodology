@@ -4,5 +4,15 @@ This book was designed to describe the steps to run the Crisp-DM model.
 
 
 :::{note}
-In this book, you can find the steps in detail and a user guide to help with implementation.
+- In this book, you can find the steps in detail.
+
+- All of the steps are summarized below in the outline of the phases.
+:::
+
+| ![generic_steps_crispdm.png](https://github.com/almirgouvea/The-Crisp-DM-Model/blob/main/images/generic_steps_crispdm.png) | 
+|:--:| 
+| *Generic tasks (bold) and outputs (italic) of the CRISP-DM reference model* |
+
+:::{note}
+In this book, also you can find a user guide to help with implementation.
 :::
