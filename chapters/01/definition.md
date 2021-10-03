@@ -17,3 +17,5 @@ CRISP-DM organizes the data mining process into six phases: business understandi
 The arrows indicates the dependencies between the phases and the outer circle symbolizes the cyclical nature of data mining itself.
 
 After complete the cyciclal the lessons learned can be analysed and show to business team. After it can be more focus on business questions and start again focusing on get other analysis.
+
+[!Crispdm.png](https://github.com/almirgouvea/The-Crisp-DM-Model/blob/main/images/Crispdm.png)
