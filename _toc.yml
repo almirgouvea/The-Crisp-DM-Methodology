@@ -1,9 +1,76 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-book
-root: intro
+format: jb-article
+root: chapters/intro
+title: Introduction
+options:
+  numbered: true
 chapters:
-- file: markdown
-- file: notebooks
-- file: The_CRISP_DM_Model
+- file: chapters/definition
+  title: Definition
+- file: chapters/01/Business_Understanding
+  title: Business Understanding
+  sections:
+  - file: chapters/01/01/Determining_business_objectives
+    title: Determining Business Objectives
+  - file: chapters/01/02/Assess_the_situation
+    title: Assess the situation
+  - file: chapters/01/03/Determine_the_data_mining_goals
+    title: Determine the data mining goals
+  - file: chapters/01/04/Producing_the_project_plan
+    title: Producing The Project Plan  
+- file: chapters/02/Data_Understanding
+  title: Data Understanding
+  sections:
+  - file: chapters/02/01/Collect_the_Initial_data
+    title: Collect the Initial data
+  - file: chapters/02/02/Describe_the_data
+    title: Describe the data
+  - file: chapters/02/03/Exploration_the_data
+    title: Exploration the data
+  - file: chapters/02/04/Verify_data_quality
+    title: Verify data quality    
+- file: chapters/03/data_preparation
+  title: Data Preparation
+  sections:
+  - file: chapters/03/01/Data_selection
+    title: Data Selection
+  - file: chapters/03/02/Data_cleaning
+    title: Data Cleaning
+  - file: chapters/03/03/Data_construction
+    title: Data Construction
+  - file: chapters/03/04/Data_integration
+    title: Data Integration  
+  - file: chapters/03/05/data_formatting
+    title: data Formatting   
+ - file: chapters/04/modeling
+  title: Modeling
+  sections:
+  - file: chapters/04/01/select_the_modeling_technique
+    title: Select the modeling technique
+  - file: chapters/04/02/generate_test_design
+    title: Generate Test Design
+  - file: chapters/04/03/build_the_model
+    title: Build The Model
+  - file: chapters/04/04/assess_the_model
+    title: Assess the model
+ - file: chapters/05/evaluation
+  title: Evaluation
+  sections:
+  - file: chapters/05/01/evaluation_of_results
+    title: Evaluation of results
+  - file: chapters/05/02/process_review
+    title: Process Review
+  - file: chapters/05/03/determination_of_next_steps
+    title: Determination of next steps   
+ - file: chapters/06/deployment
+  title: Deployment
+  sections:
+  - file: chapters/06/01/plan_deployment
+    title: Plan Deployment
+  - file: chapters/06/02/plan_monitoring_and_maintenance
+    title: Plan Monitoring and Maintenance
+  - file: chapters/06/03/final_report
+    title: The production of the final report
+  - file: chapters/06/04/review_of_the_project.md
+    title: Review of the project
