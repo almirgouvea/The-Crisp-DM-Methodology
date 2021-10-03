@@ -72,3 +72,5 @@ sections:
     title: The production of the final report
   - file: chapters/06/04/review_of_the_project.md
     title: Review of the project
+- file: chapters/07/references
+  title: References
