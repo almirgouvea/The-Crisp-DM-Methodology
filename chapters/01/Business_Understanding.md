@@ -1,5 +1,9 @@
 Business Understanding
+<<<<<<< HEAD
 =====================
+=======
+==========================================
+>>>>>>> d7de03c0fb8360e942e5a53be883e4eb4c821c86
 
 This phase aims to understand the project objectives and requirements from a business perspective, converting the knowledge into a data mining problem definition and then developing a preliminary plan to achieve the objectives.
 
