@@ -18,4 +18,4 @@ The arrows indicates the dependencies between the phases and the outer circle sy
 
 After complete the cyciclal the lessons learned can be analysed and show to business team. After it can be more focus on business questions and start again focusing on get other analysis.
 
-[!Crispdm.png](https://github.com/almirgouvea/The-Crisp-DM-Model/blob/main/images/Crispdm.png)
+![Crispdm.png](https://github.com/almirgouvea/The-Crisp-DM-Model/blob/main/images/Crispdm.png)
