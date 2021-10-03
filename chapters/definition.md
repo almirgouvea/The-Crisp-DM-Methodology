@@ -1,6 +1,6 @@
 # Definition
 
-=============================================================================================================
+====================================
 
 The CRoss-Industry Standard Process for Data Mining (CRISP-DM), created in the end of 1996 by leaders of Daimler-Benz, is a non-proprietary, documented and freely available data mining methodology and process model.
 
